@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Inversión Inteligente</title>
+    <style>
+      :root {
+        --bg: #071226;
+        --card: #0f1a33;
+        --line: rgba(148, 163, 184, 0.2);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --accent-2: #22d3ee;
+        --good: #22c55e;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        color: var(--text);
+        background: radial-gradient(1200px 700px at 0% 0%, #1d4ed8 0%, transparent 40%),
+          radial-gradient(900px 600px at 100% 100%, #0f766e 0%, transparent 45%), var(--bg);
+        min-height: 100vh;
+        padding: 24px;
+      }
+      .wrap { width: min(1100px, 100%); margin: 0 auto; }
+      h1 { margin: 0 0 10px; font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
+      .sub { color: var(--muted); margin: 0 0 20px; }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+      .card {
+        background: linear-gradient(150deg, rgba(15,26,51,.93), rgba(15,26,51,.7));
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      @media (max-width: 540px) { .fields { grid-template-columns: 1fr; } }
+      label { display: block; font-size: .9rem; color: #cbd5e1; margin-bottom: 6px; }
+      input, select {
+        width: 100%; padding: 10px 12px; border-radius: 10px;
+        border: 1px solid var(--line); background: #0b142a; color: var(--text);
+      }
+      button {
+        margin-top: 14px; border: 0; border-radius: 10px; padding: 11px 14px;
+        font-weight: 700; cursor: pointer; color: #082032;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+      .kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
+      .kpi { background: rgba(148,163,184,.08); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+      .kpi small { color: var(--muted); display: block; }
+      .kpi strong { font-size: 1.18rem; }
+      .good { color: #86efac; }
+      table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: .93rem; }
+      th, td { text-align: left; padding: 8px; border-bottom: 1px solid rgba(148,163,184,.15); }
+      th { color: #cbd5e1; font-weight: 600; }
+      .hint { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Simulador de Inversión Inteligente (aporte mensual + inflación)</h1>
+      <p class="sub">Mirá cómo crece tu capital con interés compuesto y cuánto representa en valor real descontando inflación.</p>
+
+      <section class="grid">
+        <article class="card">
+          <div class="fields">
+            <div>
+              <label for="capitalInicial">Capital inicial (ARS)</label>
+              <input id="capitalInicial" type="number" min="0" step="0.01" value="1000000" />
+            </div>
+            <div>
+              <label for="aporteMensual">Aporte mensual (ARS)</label>
+              <input id="aporteMensual" type="number" min="0" step="0.01" value="100000" />
+            </div>
+            <div>
+              <label for="rendimientoAnual">Rendimiento anual esperado (%)</label>
+              <input id="rendimientoAnual" type="number" min="0" step="0.01" value="28" />
+            </div>
+            <div>
+              <label for="inflacionAnual">Inflación anual estimada (%)</label>
+              <input id="inflacionAnual" type="number" min="0" step="0.01" value="40" />
+            </div>
+            <div>
+              <label for="anios">Plazo (años)</label>
+              <input id="anios" type="number" min="1" max="50" step="1" value="10" />
+            </div>
+            <div>
+              <label for="perfil">Perfil de estrategia</label>
+              <select id="perfil">
+                <option value="conservador">Conservador (ajuste -4%)</option>
+                <option value="moderado" selected>Moderado (sin ajuste)</option>
+                <option value="agresivo">Agresivo (ajuste +5%)</option>
+              </select>
+            </div>
+          </div>
+          <button id="simular">Simular crecimiento</button>
+          <p class="hint">Tip: probá subir el aporte mensual para ver el efecto más fuerte en el resultado final.</p>
+        </article>
+
+        <article class="card">
+          <h3>Resultados</h3>
+          <div class="kpis">
+            <div class="kpi"><small>Capital aportado</small><strong id="kpiAportado">$ 0</strong></div>
+            <div class="kpi"><small>Capital final nominal</small><strong id="kpiNominal">$ 0</strong></div>
+            <div class="kpi"><small>Capital final real</small><strong id="kpiReal">$ 0</strong></div>
+            <div class="kpi"><small>Ganancia real total</small><strong id="kpiGanancia" class="good">$ 0</strong></div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Año</th>
+                <th>Nominal</th>
+                <th>Real (hoy)</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBody"></tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const money = (n) => new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 }).format(n);
+
+      function factorPerfil(perfil) {
+        if (perfil === "conservador") return -4;
+        if (perfil === "agresivo") return 5;
+        return 0;
+      }
+
+      function simular() {
+        const capitalInicial = Number($("capitalInicial").value || 0);
+        const aporteMensual = Number($("aporteMensual").value || 0);
+        const rendimientoAnual = Number($("rendimientoAnual").value || 0) + factorPerfil($("perfil").value);
+        const inflacionAnual = Number($("inflacionAnual").value || 0);
+        const anios = Number($("anios").value || 0);
+
+        const rMensual = rendimientoAnual / 100 / 12;
+        const fMensual = inflacionAnual / 100 / 12;
+
+        let capital = capitalInicial;
+        const rows = [];
+
+        for (let mes = 1; mes <= anios * 12; mes += 1) {
+          capital = capital * (1 + rMensual) + aporteMensual;
+
+          if (mes % 12 === 0) {
+            const year = mes / 12;
+            const factorInflacion = (1 + fMensual) ** mes;
+            const real = capital / factorInflacion;
+            rows.push({ year, nominal: capital, real });
+          }
+        }
+
+        const aportado = capitalInicial + aporteMensual * anios * 12;
+        const nominalFinal = rows.at(-1)?.nominal || capitalInicial;
+        const realFinal = rows.at(-1)?.real || capitalInicial;
+        const gananciaReal = realFinal - aportado;
+
+        $("kpiAportado").textContent = money(aportado);
+        $("kpiNominal").textContent = money(nominalFinal);
+        $("kpiReal").textContent = money(realFinal);
+        const g = $("kpiGanancia");
+        g.textContent = money(gananciaReal);
+        g.style.color = gananciaReal >= 0 ? "#86efac" : "#fca5a5";
+
+        const tbody = $("tablaBody");
+        tbody.innerHTML = rows
+          .map(
+            (r) => `<tr><td>${r.year}</td><td>${money(r.nominal)}</td><td>${money(r.real)}</td></tr>`
+          )
+          .join("");
+      }
+
+      $("simular").addEventListener("click", simular);
+      simular();
+    </script>
+  </body>
+</html>
