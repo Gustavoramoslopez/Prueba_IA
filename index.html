@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Ganancia Real de Inversión</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22c55e;
+        --accent-2: #38bdf8;
+        --danger: #ef4444;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+        background: radial-gradient(circle at top, #1e293b, var(--bg));
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .container {
+        width: min(900px, 100%);
+        background: linear-gradient(145deg, #111827, #0b1223);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: clamp(1.5rem, 2.3vw, 2rem);
+      }
+
+      p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      label {
+        font-size: 0.92rem;
+        color: #d1d5db;
+      }
+
+      input {
+        width: 100%;
+        padding: 11px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: #0f172a;
+        color: var(--text);
+        outline: none;
+        transition: 150ms border-color ease;
+      }
+
+      input:focus {
+        border-color: var(--accent-2);
+      }
+
+      .actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        border: 0;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #04130a;
+        background: linear-gradient(90deg, #22c55e, #4ade80);
+      }
+
+      .secondary {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .result {
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 18px;
+        display: none;
+      }
+
+      .result.show {
+        display: block;
+      }
+
+      .metric {
+        margin: 10px 0;
+        font-size: 1.03rem;
+      }
+
+      .profit {
+        color: var(--accent);
+      }
+
+      .loss {
+        color: var(--danger);
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Calculadora de rendimiento real de inversión</h1>
+      <p>
+        Ingresa cuánto invertiste, precio y fecha de compra, precio y fecha de venta, y la
+        inflación anual estimada para ese período.
+      </p>
+
+      <section class="grid">
+        <div class="field">
+          <label for="monto">Monto invertido ($)</label>
+          <input id="monto" type="number" min="0" step="0.01" placeholder="1000" />
+        </div>
+
+        <div class="field">
+          <label for="precioCompra">Precio de compra por unidad ($)</label>
+          <input id="precioCompra" type="number" min="0" step="0.0001" placeholder="10" />
+        </div>
+
+        <div class="field">
+          <label for="fechaCompra">Fecha de compra</label>
+          <input id="fechaCompra" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="precioVenta">Precio de venta por unidad ($)</label>
+          <input id="precioVenta" type="number" min="0" step="0.0001" placeholder="12" />
+        </div>
+
+        <div class="field">
+          <label for="fechaVenta">Fecha de venta</label>
+          <input id="fechaVenta" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="inflacionAnual">Inflación anual estimada (%)</label>
+          <input id="inflacionAnual" type="number" min="0" step="0.01" placeholder="8" />
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="calcular">Calcular resultado</button>
+        <button class="secondary" id="limpiar">Limpiar</button>
+      </div>
+
+      <section id="resultado" class="result" aria-live="polite"></section>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const monto = $("monto");
+      const precioCompra = $("precioCompra");
+      const fechaCompra = $("fechaCompra");
+      const precioVenta = $("precioVenta");
+      const fechaVenta = $("fechaVenta");
+      const inflacionAnual = $("inflacionAnual");
+      const resultado = $("resultado");
+
+      const formatMoney = (n) =>
+        new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 2 }).format(n);
+
+      const formatPct = (n) => `${n.toFixed(2)}%`;
+
+      function calcular() {
+        const m = Number(monto.value);
+        const pc = Number(precioCompra.value);
+        const pv = Number(precioVenta.value);
+        const ia = Number(inflacionAnual.value);
+
+        if (!m || !pc || !pv || !fechaCompra.value || !fechaVenta.value) {
+          mostrarError("Completa todos los campos obligatorios para calcular.");
+          return;
+        }
+
+        const inicio = new Date(fechaCompra.value + "T00:00:00");
+        const fin = new Date(fechaVenta.value + "T00:00:00");
+        const dias = (fin - inicio) / (1000 * 60 * 60 * 24);
+
+        if (dias < 0) {
+          mostrarError("La fecha de venta no puede ser anterior a la fecha de compra.");
+          return;
+        }
+
+        const unidades = m / pc;
+        const valorFinal = unidades * pv;
+        const gananciaNominal = valorFinal - m;
+        const gananciaNominalPct = (gananciaNominal / m) * 100;
+
+        const inflacionPeriodoPct = ia * (dias / 365);
+        const gananciaRealPct = gananciaNominalPct - inflacionPeriodoPct;
+
+        const clase = gananciaRealPct >= 0 ? "profit" : "loss";
+
+        resultado.className = "result show";
+        resultado.innerHTML = `
+          <div class="metric">Unidades compradas: <strong>${unidades.toFixed(4)}</strong></div>
+          <div class="metric">Valor final: <strong>${formatMoney(valorFinal)}</strong></div>
+          <div class="metric">Ganancia nominal: <strong class="${gananciaNominal >= 0 ? "profit" : "loss"}">${formatMoney(gananciaNominal)} (${formatPct(gananciaNominalPct)})</strong></div>
+          <div class="metric">Inflación estimada del período (${dias.toFixed(0)} días): <strong>${formatPct(inflacionPeriodoPct)}</strong></div>
+          <div class="metric">Porcentaje final (ganancia - inflación): <strong class="${clase}">${formatPct(gananciaRealPct)}</strong></div>
+          <div class="small">Nota: la inflación del período se calcula de forma lineal a partir de la inflación anual ingresada.</div>
+        `;
+      }
+
+      function mostrarError(msg) {
+        resultado.className = "result show";
+        resultado.innerHTML = `<div class="metric loss"><strong>${msg}</strong></div>`;
+      }
+
+      function limpiarCampos() {
+        [monto, precioCompra, fechaCompra, precioVenta, fechaVenta, inflacionAnual].forEach((el) => (el.value = ""));
+        resultado.className = "result";
+        resultado.innerHTML = "";
+      }
+
+      $("calcular").addEventListener("click", calcular);
+      $("limpiar").addEventListener("click", limpiarCampos);
+    </script>
+  </body>
+</html>
