@@ -1,17 +1,14 @@
 # Prueba_IA
 
-Repositorio de prueba IA.
+Mini proyecto web con una pantalla de cotizaciones en **peso argentino (ARS)** para:
+- Dólar (USD/ARS)
+- Bitcoin (BTC/ARS)
+- Ethereum (ETH/ARS)
 
-## Estado
-- ✅ El archivo `index.html` ya está cargado en la raíz del repositorio y listo para usar.
-
-## Cómo abrirlo
-- Opción rápida: abrir `index.html` directamente en el navegador.
-- Opción con servidor local:
-
+## Ejecutar localmente
 ```bash
 python3 -m http.server 4173 --directory .
 ```
 
-Luego entra a:
+Abrir en navegador:
 - `http://localhost:4173/index.html`
