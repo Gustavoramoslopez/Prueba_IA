@@ -1,0 +1,311 @@
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+==> Listando playlist...
+    32 videos en 'Comisión PM | Introducción a Ethereum y Solidity | ETH Kipu - Talento Tech | 2026'
+[01/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 14 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 01 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 14 - Parte 2.md (OK)
+[02/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 14 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 02 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 14 - Parte 1.md (OK)
+[03/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 13 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 03 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 13 - Parte 2.md (OK)
+[04/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 13 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 04 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 13 - Parte 1.md (OK)
+[05/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 12 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 05 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 12 - Parte 2.md (OK)
+[06/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 12 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 06 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 12 - Parte 1.md (OK)
+[07/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 11 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 07 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 11 - Parte 2.md (OK)
+[08/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 11 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 08 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 11 - Parte 1.md (OK)
+[09/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 10 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 09 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 10 - Parte 2.md (OK)
+[10/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 10 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 10 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 10 - Parte 1.md (OK)
+[11/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 9 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 11 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 9 - Parte 2.md (OK)
+[12/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 9 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 12 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 9 - Parte 1.md (OK)
+[13/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 8 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 13 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 8 - Parte 2.md (OK)
+[14/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 8 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 14 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 8 - Parte 1.md (OK)
+[15/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 7
+    -> intentando youtube-transcript-api...
+    -> 15 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 7.md (OK)
+[16/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 6 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 16 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 6 - Parte 2.md (OK)
+[17/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 6 - Parte 1
+    -> intentando youtube-transcript-api...
+    -> 17 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 6 - Parte 1.md (OK)
+[18/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 5 - Parte 2
+    -> intentando youtube-transcript-api...
+    -> 18 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 5 - Parte 2.md (OK)
+[19/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 5 - Parte 1
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Aklm67N4DJQ! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 19 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 5 - Parte 1.md (SIN SUBS)
+[20/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 3
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Y96l5OCNVJ4! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 20 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 3.md (SIN SUBS)
+[21/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 2
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=tLaxhpMuW3E! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 21 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 2.md (SIN SUBS)ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+
+[22/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 1
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=oyZ96XPafhU! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 22 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 1.md (SIN SUBS)
+[23/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 3 - Parte 2
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=J9iLFYEnXsY! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 23 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 3 - Parte 2.md (SIN SUBS)
+[24/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 3 - Parte 1
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=7JNj572Y70Y! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 24 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 3 - Parte 1.md (SIN SUBS)
+[25/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 2 - Parte 2
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=Y07fh86zudI! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 25 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 2 - Parte 2.md (SIN SUBS)
+[26/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 2 - Parte 1
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=jLLI2wZlDcE! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 26 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 2 - Parte 1.md (SIN SUBS)
+[27/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 1 - Parte 2
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=WS4d33MqH7k! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 27 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 1 - Parte 2.md (SIN SUBS)
+[28/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 1 - Parte 1
+    -> intentando youtube-transcript-api...
+    [api] error: IpBlocked: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=T7bqNCQAeuw! This is most likely caused by:
+
+YouTube is blocking requests from your IP. This usually is due to one of the following reasons:
+- You have done too many requests and your IP has been blocked by YouTube
+- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.
+
+Ways to work around this are explained in the "Working around IP bans" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).
+
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: Unable to download video subtitles for 'es': HTTP Error 429: Too Many Requests
+    -> 28 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 1 - Parte 1.md (SIN SUBS)
+[29/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 0
+    -> intentando youtube-transcript-api...
+    -> fallback a yt-dlp...
+    -> 29 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 0.md (SIN SUBS)
+[30/32] None
+    metadata error: ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+    -> intentando youtube-transcript-api...
+    [api] error: VideoUnplayable: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=G3MA3iHsMLc! This is most likely caused by:
+
+The video is unplayable for the following reason: This video has been removed for violating YouTube's policy on harassment and bullying
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+    -> fallback a yt-dlp...
+    [ytdlp] error: DownloadError: ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+Traceback (most recent call last):
+  File "C:\01 - Gustavo\0.0 Sistemas\01 - 2026 desarrollo solidity-eth\descargar_transcripciones.py", line 230, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\01 - Gustavo\0.0 Sistemas\01 - 2026 desarrollo solidity-eth\descargar_transcripciones.py", line 215, in main
+    path = write_markdown(out_dir, i, total, meta, transcript)
+  File "C:\01 - Gustavo\0.0 Sistemas\01 - 2026 desarrollo solidity-eth\descargar_transcripciones.py", line 154, in write_markdown
+    fname = f"{idx:02d} - {slugify(title)}.md"
+                           ~~~~~~~^^^^^^^
+  File "C:\01 - Gustavo\0.0 Sistemas\01 - 2026 desarrollo solidity-eth\descargar_transcripciones.py", line 34, in slugify
+    text = re.sub(r"[\\/:*?\"<>|]", "", text)
+  File "C:\Program Files\Python313\Lib\re\__init__.py", line 208, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'NoneType'
+ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+==> Listando playlist...
+    32 videos en 'Comisión PM | Introducción a Ethereum y Solidity | ETH Kipu - Talento Tech | 2026'
+[19/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 5 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 19 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 5 - Parte 1.md (OK)
+[20/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 3
+    -> [intento 1] youtube-transcript-api...
+    -> 20 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 3.md (OK)
+[21/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 2
+    -> [intento 1] youtube-transcript-api...
+    -> 21 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 2.md (OK)
+[22/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 4 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 22 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 4 - Parte 1.md (OK)
+[23/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 3 - Parte 2
+    -> [intento 1] youtube-transcript-api...
+    -> 23 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 3 - Parte 2.md (OK)
+[24/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 3 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 24 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 3 - Parte 1.md (OK)
+[25/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 2 - Parte 2
+    -> [intento 1] youtube-transcript-api...
+    -> 25 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 2 - Parte 2.md (OK)
+[26/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 2 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 26 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 2 - Parte 1.md (OK)
+[27/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 1 - Parte 2
+    -> [intento 1] youtube-transcript-api...
+    -> 27 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 1 - Parte 2.md (OK)
+[28/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 1 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 28 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 1 - Parte 1.md (OK)
+[29/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 0
+    -> [intento 1] youtube-transcript-api...
+    -> [intento 1] fallback yt-dlp...
+    -> 29 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 0.md (SIN SUBS)
+[30/32] [Deleted video]
+    metadata error: DownloadError: ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+    -> [intento 1] youtube-transcript-api...
+    [api] VideoUnplayable: 
+    -> [intento 1] fallback yt-dlp...
+    [ytdlp] DownloadError: ERROR: [youtube] G3MA3iHsMLc: This video has been removed for violating YouTube's policy on harassment and bullying
+    -> 30 - [Deleted video].md (SIN SUBS)
+[31/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 15 - Parte 1
+    -> [intento 1] youtube-transcript-api...
+    -> 31 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 15 - Parte 1.md (OK)
+[32/32] ETH Kipu - Talento Tech | 2026 | Comisión PM | Clase 15 - Parte 2
+    -> [intento 1] youtube-transcript-api...
+    -> 32 - ETH Kipu - Talento Tech 2026 Comisión PM Clase 15 - Parte 2.md (OK)
+
+==> Listo. 12 OK / 2 sin subs / 0 salteados. Salida: C:\01 - Gustavo\0.0 Sistemas\01 - 2026 desarrollo solidity-eth\transcripciones
