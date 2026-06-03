@@ -117,8 +117,13 @@ contract Ejecucion is AccessControl, ReentrancyGuard, Pausable {
     // Vencimiento de plazo de ejecucion
     // ----------------------------------------------------------------
 
-    /// @notice Si el plazo de ejecucion vencio sin 2 firmas, marca el proyecto Fallido
-    ///         para habilitar el circuito de devolucion.
+    /// @notice Si el plazo de ejecucion vencio sin las 2 firmas, marca el proyecto Fallido
+    ///         (deja constancia on-chain del incumplimiento del proveedor / deadlock del multisig).
+    /// @dev LIMITACION CONOCIDA DEL MVP: en este caso los fondos ya estan en custodia de
+    ///      este contrato (se movieron al financiarse), por lo que NO los devuelve la ruta
+    ///      Pull de los Pools (esa solo cubre fallos en financiacion, donde el dinero sigue
+    ///      en el Pool). La recuperacion de estos fondos queda fuera de alcance del MVP; en
+    ///      v2 se resolveria con una funcion de recuperacion admin o un reembolso desde aqui.
     function vencerPlazoEjecucion(uint256 proyectoId) external whenNotPaused {
         FondosProyecto storage f = fondos[proyectoId];
         if (f.liberado) revert YaLiberado();
